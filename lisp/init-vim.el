@@ -32,7 +32,8 @@ that was stored with ska-point-to-register."
   )
 (global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
 
-;; 移动行
+;; 查看某个变量名相同的所有变量
+(define-key global-map (kbd "C-c o") 'iedit-mode)
 
 
 ; 其他配置
@@ -73,5 +74,21 @@ that was stored with ska-point-to-register."
   (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe))
 (add-hook 'python-mode-hook 'auto-pair)
 (add-hook 'python-mode-hook 'auto-pair)
+
+;; 自动补全配置
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode); global enable
+(setq company-show-numbers t); display serial number
+(setq company-idle-delay 0.2); menu delay
+(setq company-minimum-prefix-length 1); start completelyness number
+
+; 补全菜单选项快捷键
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode);global enable
+
 
 (provide 'init-vim)

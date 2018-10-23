@@ -5,6 +5,12 @@
 ;;保存
 ;;(global-set-key (kbd "C-s") 'save-buffer)
 
+;;tab转空格
+(setq-default indent-tabs-mode nil)
+(setqdefault-tab-width 4)
+(setqbackward-delete-char-untabify-method nil)
+
+
 ;;跳转到某行
 (global-set-key [(meta g)] 'goto-line)
 ;;Tab补全或缩进
@@ -23,6 +29,11 @@
 ;; 替换 yes no -> y n
 (fset 'yes-or-no-p'y-or-n-p)
 
+
+;; 显示行号
+(global-linum-mode 1) ; always show line numbers
+(setq linum-format "%d$ ")
+(setq py-autopep8-options '("--max-line-length=100"))
 
 ;; 更换光标为方块
 (setq-default cursor-type 'box)
@@ -49,7 +60,41 @@
 ;;高亮当前行
 (require 'hl-line)
 (global-hl-line-mode t)
+(set-face-background 'hl-line "#426167")
 
 
 ;;在标题栏显示buffer的名字(默认不显示)
 (setq frame-title-format "%b@emacs")
+
+
+;; 自定义高亮行显示颜色
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+;(setq highlight-indentation-offset 4)
+(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-auto-odd-face-perc 15)
+(setq highlight-indent-guides-auto-even-face-perc 15)
+(setq highlight-indent-guides-auto-character-face-perc 20)
+
+;;关闭tab提示音
+(setq visible-bell t)
+
+
+;;启动Emacs自动设置为两个窗口(上下各一个)
+(split-window-horizontally)
+
+
+;;关闭烦人的出错时的提示声。
+(setq visible-bell t)
+
+
+;;隐藏工具栏
+;;(tool-bar-mode nil)
+
+;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
+(menu-bar-mode nil)
+
+;;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西。
+(setq kill-ring-max 200)
+
+
+(provide 'init-ui)

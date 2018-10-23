@@ -18,7 +18,7 @@
 
 
 (elpy-enable)
-(setq elpy-rpc-banckend "jedi")
+;(setq elpy-rpc-banckend "jedi")
 
 ; yas
 (setq yas/prompt-functions

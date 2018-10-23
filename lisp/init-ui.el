@@ -5,6 +5,12 @@
 ;;保存
 ;;(global-set-key (kbd "C-s") 'save-buffer)
 
+;;tab转空格
+(setq-default indent-tabs-mode nil)
+(setq default-tab-width 4)
+(setq backward-delete-char-untabify-method nil)
+
+
 ;;跳转到某行
 (global-set-key [(meta g)] 'goto-line)
 ;;Tab补全或缩进
