@@ -1,0 +1,10 @@
+# -*- mode: python_class -*-
+# name: class
+# key: class
+# --
+class $1:
+
+    def __init__(self):
+    	pass
+
+    $2	

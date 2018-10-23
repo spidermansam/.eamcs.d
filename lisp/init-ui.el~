@@ -1,0 +1,55 @@
+;;撤消
+;;(global-set-key (kbd "C-z") 'undo)
+;;全选
+;;(global-set-key (kbd "C-a") 'mark-whole-buffer)
+;;保存
+;;(global-set-key (kbd "C-s") 'save-buffer)
+
+;;跳转到某行
+(global-set-key [(meta g)] 'goto-line)
+;;Tab补全或缩进
+(global-set-key [(tab)] 'my-indent-or-complete)
+
+
+;;显示匹配括号
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
+
+
+;; 不产生备份文件
+(setq make-backup-files nil)
+
+
+;; 替换 yes no -> y n
+(fset 'yes-or-no-p'y-or-n-p)
+
+
+;; 更换光标为方块
+(setq-default cursor-type 'box)
+
+
+					;滚动页面时比较舒服，不要整页的滚动
+(setq     scroll-step 1
+	  scroll-margin 3
+	  scroll-conservatively 10000)
+
+
+;;滚动页面时比较舒服，不要整页的滚动
+(setq     scroll-step 1
+	  scroll-margin 3
+	  scroll-conservatively 10000)
+
+
+;;显示时间
+(display-time-mode t)
+;;启动Emacs Server
+;;(server-start)
+
+
+;;高亮当前行
+(require 'hl-line)
+(global-hl-line-mode t)
+
+
+;;在标题栏显示buffer的名字(默认不显示)
+(setq frame-title-format "%b@emacs")
