@@ -14,7 +14,7 @@
 (require 'init-plugins)
 (require 'init-versions)
 (require 'yasnippet)
-
+(require 'init-go)
 
 
 (elpy-enable)
