@@ -29,9 +29,10 @@
 ;; 替换 yes no -> y n
 (fset 'yes-or-no-p'y-or-n-p)
 
+;; powerline
 
 ;; 显示行号
-(global-linum-mode 1) ; always show line numbers
+(global-linum-mode t) ; always show line numbers
 (setq linum-format "%d$ ")
 (setq py-autopep8-options '("--max-line-length=100"))
 
@@ -60,16 +61,18 @@
 ;;高亮当前行
 (require 'hl-line)
 (global-hl-line-mode t)
-(set-face-background 'hl-line "#426167")
+(set-face-background 'hl-line "#66FFFF")
+;(load-theme 'tsdh-dark t)
+(load-theme 'dracula t)
 
 
 ;;在标题栏显示buffer的名字(默认不显示)
-(setq frame-title-format "%b@emacs")
+;(setq frame-title-format "%b@emacs")
 
 
 ;; 自定义高亮行显示颜色
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-;(setq highlight-indentation-offset 4)
+(setq highlight-indentation-offset 4)
 (setq highlight-indent-guides-method 'character)
 (setq highlight-indent-guides-auto-odd-face-perc 15)
 (setq highlight-indent-guides-auto-even-face-perc 15)

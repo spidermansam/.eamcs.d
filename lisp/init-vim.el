@@ -28,8 +28,7 @@
 
 ; python 按键配置
 (defun auto-pair ()
-  (local-set-key (kbd "C-f")  'isearch-forward)
-  (local-set-key (kbd "C-s") 'elpy-check)
+;  (local-set-key (kbd "C-x C-s") 'elpy-check)
   (local-set-key (kbd "C-z") 'undo)
   )
 (add-hook 'python-mode-hook 'auto-pair)
@@ -37,22 +36,22 @@
 
 
 ; auto company
-(require 'company)
-(global-company-mode t); 全局开启
+;(require 'company)
+;(global-company-mode t); 全局开启
 
-(setq company-idle-delay 0.2;菜单延迟
-      company-minimum-prefix-length 1; 开始补全字数
-      company-require-match nil
-      company-dabbrev-ignore-case nil
-      company-dabbrev-downcase nil
-      company-show-numbers t; 显示序号
-      company-transformers '(company-sort-by-backend-importance)
-      company-continue-commands '(not helm-dabbrev)
-      )
-                                        ; 补全菜单选项快捷键
-(define-key company-active-map (kbd "C-n") 'company-select-next)
-(define-key company-active-map (kbd "C-p") 'company-select-previous)
-
+;(setq company-idle-delay 0.2;菜单延迟
+;      company-minimum-prefix-length 1; 开始补全字数
+;      company-require-match nil
+;      company-dabbrev-ignore-case nil
+;      company-dabbrev-downcase nil
+;      company-show-numbers t; 显示序号
+;      company-transformers '(company-sort-by-backend-importance)
+;      company-continue-commands '(not helm-dabbrev)
+;      )
+;                                        ; 补全菜单选项快捷键
+;(define-key company-active-map (kbd "C-n") 'company-select-next)
+;(define-key company-active-map (kbd "C-p") 'company-select-previous)
+;
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode);global enable
 
