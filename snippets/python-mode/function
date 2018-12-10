@@ -1,6 +1,0 @@
-# -*- mode: python_function -*-
-# name: function
-# key: def
-# --
-def $1($2,*args,**kwargs):
-    $3 
